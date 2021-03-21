@@ -11,29 +11,11 @@ extern crate kurebcrypt;
 mod consts;
 use kurebcrypt::*;
 
-
+// fn main() {
+//     let salt: [u8; 16] =  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+//     let password = "password".as_bytes();
+//     println!("{}", bcrypt(5, &salt, password));
+// }
 
 fn main() {
-
-    println!("{:?}", encode("hello".as_bytes()));
-    println!("{:?}", encode("".as_bytes()));
-
-    // // InitialState
-    // let state = State {
-    //     s0: consts::SBOX0,
-    //     s1: consts::SBOX1,
-    //     s2: consts::SBOX2,
-    //     s3: consts::SBOX3,
-    //     p: consts::PARRAY
-    // };
-
-    // let byte_array: [u8; 5] = [1, 2, 3, 4, 5];
-    // let mut j: usize = 0;
-    // let salt: [u8; 16] = [00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00];
-    // bcrypt(10, &salt, "password".as_bytes());
-    // // let res = 
-    // // println!("{:#02x}, {}", bcrypt(&byte_array, &mut j).unwrap(), j);
-
-    // println!("{:?}", consts::PARRAY);
 }
-
