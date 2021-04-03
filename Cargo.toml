@@ -11,3 +11,6 @@ name = "kurebcrypt"
 path = "src/lib.rs"
 
 [dependencies]
+
+[profile.release]
+debug = 1
