@@ -152,6 +152,22 @@ pub fn encrypt(state: &State, data: u64) -> u64 {
     (xl as u64) << 32 | (xr as u64)
 }
 
+
+
+// pub fn encrypt(state: &State, data: u64) -> u64 {
+//     let mut xr = data as u32;
+//     let mut xl = (data >> 32) as u32;
+
+// 	xl ^= state.p[0];
+//     for i in 1..9 {
+//         xr ^= (((state.s0[(xl>>24) as u8 as usize].wrapping_add(state.s1[(xl>>16) as u8 as usize])) ^ state.s2[(xl>>8) as u8 as usize])).wrapping_add(state.s3[(xl) as u8 as usize]) ^ state.p[i*2-1];
+//         xl ^= (((state.s0[(xr>>24) as u8 as usize].wrapping_add(state.s1[(xr>>16) as u8 as usize])) ^ state.s2[(xr>>8) as u8 as usize])).wrapping_add(state.s3[(xr) as u8 as usize]) ^ state.p[i*2];
+//     }
+// 	xr ^= state.p[17];
+
+//     (xr as u64) << 32 | (xl as u64)
+// }
+
 fn f(state: &State, x: u32) -> u32 {
     let a = (x >> 24) as u8;
     let b = (x >> 16) as u8;

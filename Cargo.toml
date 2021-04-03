@@ -11,6 +11,14 @@ name = "kurebcrypt"
 path = "src/lib.rs"
 
 [dependencies]
+pprof = { version = "0.4", features = ["flamegraph", "protobuf"] }
+
+[dev-dependencies]
+criterion = "0.3"
+
+[[bench]]
+name = "my_benchmark"
+harness = false
 
 [profile.release]
 debug = 1

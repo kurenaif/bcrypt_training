@@ -8,14 +8,45 @@
 
 extern crate kurebcrypt;
 
-mod consts;
+// mod consts;
+// use kurebcrypt::*;
+// use pprof;
+// use std::fs::File;
+
 use kurebcrypt::*;
+use pprof;
+use pprof::protos::Message;
+use std::fs::File;
+use std::io::Write;
 
 fn main() {
+    let guard = pprof::ProfilerGuard::new(100).unwrap();
+
     let salt: [u8; 16] =  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
     let password = "password".as_bytes();
-    for i in 0..1000  {
+    for _ in 0..1000  {
         bcrypt(5, &salt, password);
         // println!("{}", bcrypt(5, &salt, password));
     }
+
+    // if let Ok(report) = guard.report().build() {
+    //     let file = File::create("flamegraph.svg").unwrap();
+    //     let mut options = pprof::flamegraph::Options::default();
+    //     options.image_width = Some(2500);
+    //     report.flamegraph_with_options(file, &mut options).unwrap();
+    // };
+
+    // match guard.report().build() {
+    //     Ok(report) => {
+    //         let mut file = File::create("profile.pb").unwrap();
+    //         let profile = report.pprof().unwrap();
+
+    //         let mut content = Vec::new();
+    //         profile.encode(&mut content).unwrap();
+    //         file.write_all(&content).unwrap();
+
+    //         // println!("report: {}", &report);
+    //     }
+    //     Err(_) => {}
+    // };
 }

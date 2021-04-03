@@ -1,0 +1,35 @@
+
+running 7 tests
+test test_eks_blowfish_setup ... ignored
+test test_encocde ... ignored
+test test_encrypt ... ignored
+test test_expand_key ... ignored
+test test_expand_key_without_salt ... ignored
+test test_get_next_u32 ... ignored
+test test_get_next_u32_continuous ... ignored
+
+test result: ok. 0 passed; 0 failed; 7 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+WARNING: HTML report generation will become a non-default optional feature in Criterion.rs 0.4.0.
+This feature is being moved to cargo-criterion (https://github.com/bheisler/cargo-criterion) and will be optional in a future version of Criterion.rs. To silence this warning, either switch to cargo-criterion or enable the 'html_reports' feature in your Cargo.toml.
+
+Gnuplot not found, using plotters backend
+Benchmarking kurebcrypt
+Benchmarking kurebcrypt: Warming up for 3.0000 s
+
+Warning: Unable to complete 100 samples in 5.0s. You may wish to increase target time to 8.1s, enable flat sampling, or reduce sample count to 50.
+Benchmarking kurebcrypt: Collecting 100 samples in estimated 8.0927 s (5050 iterations)
+Benchmarking kurebcrypt: Analyzing
+kurebcrypt              time:   [1.5973 ms 1.5990 ms 1.6009 ms]
+                        change: [-3.1058% -2.0618% -1.4108%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Found 13 outliers among 100 measurements (13.00%)
+  3 (3.00%) low mild
+  3 (3.00%) high mild
+  7 (7.00%) high severe
+
